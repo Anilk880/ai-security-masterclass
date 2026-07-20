@@ -1,0 +1,8 @@
+openai>=1.40.0
+python-dotenv>=1.0.0
+tiktoken>=0.7.0
+
+# code/production-reference/ only -- a real production AI gateway's guard
+# code, adapted to run with zero AWS account (see its README). pytest runs
+# its real test suite, 84 tests, fully offline.
+pytest>=8.0.0
