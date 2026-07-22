@@ -27,7 +27,22 @@ material — `script-*.md`, `*.pptx`, `audio/`, `video/`, `shared/`,
 `COURSE-OUTLINE.md` — stays out of that push; it's production material, not
 something a student browsing the public repo needs to see.
 
-## Setup (do this once, before Section 1)
+## Setup (Section 1, do this once before Section 2)
+
+Section 1 is a short, one-time setup session, not course content — its whole
+job is to get you from "just cloned this repo" to "every later lecture's
+code just runs" in five steps. By the end of it you'll have a real Linux
+terminal (WSL on Windows, native on Ubuntu/Linux), Python 3.9+, this repo's
+dependencies installed in an isolated virtual environment, and either a real
+OpenAI API key or fully offline **dummy mode** configured and verified with
+a live test run. Nothing here is course-specific to AI security yet — it's
+the same setup any Python project would need.
+
+- **Full, beginner-friendly walkthrough** (every step explained, with
+  troubleshooting and a readiness checklist): [`SETUP.md`](./SETUP.md)
+- **Command-only quick reference** for this setup session: [`RUN-COMMANDS.md`](./RUN-COMMANDS.md)
+
+The condensed version, if you just want the commands:
 
 **Windows users: install WSL first.** If you're on Windows, set up
 [WSL](https://learn.microsoft.com/windows/wsl/install) (`wsl --install` in an
@@ -37,15 +52,15 @@ PowerShell/CMD. Nearly every package this course and its code examples touch
 — Python build tooling, `pip` packages with native extensions, `ffmpeg` if you
 later generate audio/video versions of the lectures — installs more reliably
 and matches what real Linux servers run in production, which is where AI
-security tooling actually gets deployed. Mac/Linux users can skip straight to
-step 1.
+security tooling actually gets deployed. Ubuntu/Linux users can skip straight
+to step 1.
 
 1. **Python 3.9+** — check with `python3 --version`.
 2. **Create a virtual environment and install dependencies:**
    ```bash
    cd ai-security-masterclass
    python3 -m venv .venv
-   source .venv/bin/activate   # Windows: .venv\Scripts\activate
+   source .venv/bin/activate
    pip install -r requirements.txt
    ```
 3. **Get an OpenAI API key** at https://platform.openai.com/api-keys (a few
@@ -68,6 +83,9 @@ step 1.
    ```
    Expected output ends with `Model replied: setup ok`. If that printed, you're
    ready for every code example in this course.
+
+Stuck on any step? [`SETUP.md`](./SETUP.md) has the detailed version of
+each one plus a troubleshooting entry for the most common errors.
 
 ## Run the capstone gateway
 
